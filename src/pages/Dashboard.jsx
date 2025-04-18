@@ -49,7 +49,7 @@ export default function Dashboard() {
             <TitleCard key={title.id} title={title} />
           ))}
         </div> */}
-        <div className="title-grid-container">
+        <div className="title-grid">
           {mockTitles.map((title) => (
             <TitleCard key={title.id} title={title} />
           ))}
