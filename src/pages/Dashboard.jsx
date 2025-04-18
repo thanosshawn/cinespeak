@@ -43,7 +43,12 @@ export default function Dashboard() {
       <Header user={user} onLogout={handleLogout} />
 
       <main className="dashboard-main">
-        <h2 className="section-title">Trending Titles</h2>
+        <h2 className="section-title"  style={{ marginTop: "1rem" }}>Trending Titles</h2>
+        {/* <div className="title-grid-container">
+          {mockTitles.map((title) => (
+            <TitleCard key={title.id} title={title} />
+          ))}
+        </div> */}
         <div className="title-grid-container">
           {mockTitles.map((title) => (
             <TitleCard key={title.id} title={title} />
