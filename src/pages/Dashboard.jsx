@@ -26,7 +26,7 @@ export default function Dashboard() {
     <div className="dashboard">
       <Header user={user} onLogout={handleLogout} />
 
-      <main className="dashboard-content">
+      <main className="dashboard-main">
         <h2 className="section-title">Trending Titles</h2>
         <div className="title-grid">
           {mockTitles.map((title) => (
