@@ -2,6 +2,7 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getAuth, GoogleAuthProvider } from "firebase/auth";
+import { getDatabase } from "firebase/database";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -14,7 +15,8 @@ const firebaseConfig = {
   storageBucket: "streamspeak-81086.firebasestorage.app",
   messagingSenderId: "244558748719",
   appId: "1:244558748719:web:12acdc22c9d12a68c5bada",
-  measurementId: "G-2VY44XHBQ3"
+  measurementId: "G-2VY44XHBQ3",
+  databaseURL:"https://streamspeak-81086-default-rtdb.asia-southeast1.firebasedatabase.app/"
 };
 
 // Initialize Firebase
@@ -22,3 +24,4 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 export const auth = getAuth(app);
 export const googleProvider = new GoogleAuthProvider();
+export const db=getDatabase(app);
