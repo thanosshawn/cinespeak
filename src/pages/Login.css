@@ -1,0 +1,108 @@
+/* src/pages/Login.css */
+
+body {
+    margin: 0;
+    font-family: 'Poppins', 'Noto Sans JP', sans-serif;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    overflow: hidden;
+  }
+  
+  .login-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  
+  .login-box {
+    position: relative;
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    width: 350px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    animation: fadeIn 0.6s ease;
+    z-index: 1;
+  }
+  
+  .login-container::before {
+    content: "";
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(255, 182, 193, 0.4), transparent 70%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    filter: blur(80px);
+    animation: pulse 6s ease-in-out infinite;
+    z-index: 0;
+  }
+  
+  @keyframes pulse {
+    0%, 100% {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 0.6;
+    }
+    50% {
+      transform: translate(-50%, -50%) scale(1.1);
+      opacity: 1;
+    }
+  }
+  
+  .title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #e91e63;
+    margin-bottom: 10px;
+  }
+  
+  .title span {
+    color: #3f51b5;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 30px;
+  }
+  
+  .google-btn {
+    background-color: #ffffff;
+    border: 1px solid #dadce0;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 12px 24px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
+    transition: all 0.3s ease;
+    color: #202124;
+    text-align: center;
+    box-sizing: border-box;
+  }
+  
+  .google-btn:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transform: translateY(-2px);
+  }
+  
+  .google-btn img {
+    width: 20px;
+    height: 20px;
+  }
+  
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  

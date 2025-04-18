@@ -1,0 +1,38 @@
+/* src/pages/Dashboard.css */
+
+.dashboard {
+    background: linear-gradient(to bottom right, #fdfbfb, #ebedee);
+    min-height: 100vh;
+    font-family: 'Poppins', 'Noto Sans JP', sans-serif;
+    animation: fadeIn 0.8s ease;
+  }
+  
+  .dashboard-content {
+    padding: 40px;
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #3f51b5;
+    text-shadow: 0 1px 0 #fff;
+    animation: slideUp 0.5s ease;
+  }
+  
+  .title-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+    animation: fadeIn 1s ease;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0 }
+    to { opacity: 1 }
+  }
+  
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
