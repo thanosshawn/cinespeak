@@ -7,7 +7,7 @@ import TitleCard from "../components/TitleCard";
 import "./Dashboard.css";
 
 const mockTitles = [
-  { id: 1, name: "The Shawshank Redemption", genre: "Drama", year: 1994 },
+  { id: 1, name: "T he Shawshank Redemption", genre: "Drama", year: 1994 },
   { id: 2, name: "The Godfather", genre: "Crime", year: 1972 },
   { id: 3, name: "The Dark Knight", genre: "Action", year: 2008 },
   { id: 4, name: "Pulp Fiction", genre: "Crime", year: 1994 },
