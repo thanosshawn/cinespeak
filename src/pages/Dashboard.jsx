@@ -27,7 +27,7 @@ export default function Dashboard() {
       <Header user={user} onLogout={handleLogout} />
 
       <main className="dashboard-content">
-        <h2 className="section-title">🎬 Trending Titles</h2>
+        <h2 className="section-title">Trending Titles</h2>
         <div className="title-grid">
           {mockTitles.map((title) => (
             <TitleCard key={title.id} title={title} />

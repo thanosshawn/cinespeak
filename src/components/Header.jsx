@@ -5,7 +5,11 @@ import "./Header.css";
 export default function Header({ user, onLogout }) {
   return (
     <header className="dashboard-header">
-      <div className="welcome-text">
+      <div 
+        className="welcome-text"
+        style={{
+          width: "100%",
+        }}>
         <h1>Welcome back, <span>{user.displayName}</span> ✨</h1>
         <p>Let’s dive into the world of stories 🌸</p>
       </div>
