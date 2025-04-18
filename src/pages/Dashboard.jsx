@@ -44,12 +44,8 @@ export default function Dashboard() {
 
       <main className="dashboard-main">
         <h2 className="section-title"  style={{ marginTop: "1rem" }}>Trending Titles</h2>
-        {/* <div className="title-grid-container">
-          {mockTitles.map((title) => (
-            <TitleCard key={title.id} title={title} />
-          ))}
-        </div> */}
-        <div className="title-grid">
+       
+        <div className="title-grid-container">
           {mockTitles.map((title) => (
             <TitleCard key={title.id} title={title} />
           ))}
