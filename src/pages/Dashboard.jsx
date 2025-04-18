@@ -28,7 +28,7 @@ export default function Dashboard() {
 
       <main className="dashboard-main">
         <h2 className="section-title">Trending Titles</h2>
-        <div className="title-grid">
+        <div className="title-grid-container">
           {mockTitles.map((title) => (
             <TitleCard key={title.id} title={title} />
           ))}
