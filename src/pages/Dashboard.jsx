@@ -7,7 +7,7 @@ import TitleCard from "../components/TitleCard";
 import "./Dashboard.css";
 
 const mockTitles = [
-  { id: 1, name: "Attack on Titan", genre: "Anime", year: 2023 },
+  { id: 1, name: "Titan", genre: "Anime", year: 2023 },
   { id: 2, name: "Oppenheimer", genre: "Movie", year: 2023 },
   { id: 3, name: "Demon Slayer", genre: "Anime", year: 2024 },
   { id: 4, name: "Jujutsu Kaisen", genre: "Anime", year: 2023 },
