@@ -54,3 +54,10 @@ h2 {
   border-radius: 8px;
   cursor: pointer;
 }
+/* src/pages/ChatRoom.css */
+.timestamp {
+  font-size: 0.8rem;
+  color: #888;
+  margin-left: 10px;
+  font-style: italic;
+}
