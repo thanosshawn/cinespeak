@@ -22,12 +22,24 @@
   text-align: center; /* Center for mobile */
 }
 
-/* Responsive Grid for Title Cards */
+/* Scrollable Grid Container */
+.title-grid-container {
+  overflow-y: auto; /* Vertical scrolling */
+  max-height: 600px; /* Adjust as needed */
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+/* Grid for Title Cards */
 .title-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1.5rem;
   justify-items: center;
+  padding-bottom: 1rem; /* For scrollbar visibility */
+  /* Removed animation: Interferes with scroll */
 }
 
 /* Assuming TitleCard styles (adjust as needed) */
@@ -36,13 +48,23 @@
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   padding: 1rem;
-  text-align: center;
-  transition: transform 0.2s;
+  text-align: left; /* Align content to the left for a cleaner look */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer; /* Indicate interactiveness */
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.5s ease-out forwards;
 }
 
 .title-card:hover {
-  transform: scale(1.05); /* Subtle hover effect */
+  transform: translateY(-5px); /* Slight lift on hover */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Stronger shadow */
 }
+
+@keyframes fadeInUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
 
 .title-card img {
   max-width: 100%;
@@ -50,14 +72,35 @@
   border-radius: 4px;
 }
 
+.title-card-content {
+  padding: 0.5rem 0;
+}
+
 .title-card h3 {
-  font-size: 1.2rem;
-  margin: 0.5rem 0;
+  font-size: 1.3rem; /* Slightly larger title */
+  margin: 0.25rem 0;
+  color: #333;
+  /* Animated underline */
+  position: relative;
+}
+
+.title-card h3::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 2px;
+  background-color: #007bff; /* Highlight color */
+  transition: width 0.3s ease;
+}
+
+.title-card:hover h3::after {
+  width: 100%;
 }
 
 .title-card p {
-  font-size: 0.9rem;
-  color: #666;
+  font-size: 1rem; /* Slightly larger text */
 }
 
 /* Media Queries for Responsiveness */
@@ -69,36 +112,25 @@
   .section-title {
     font-size: 1.5rem; /* Smaller title */
   }
-
+  .title-grid-container {
+    max-height: 500px;
+    padding: 0.5rem;
+  }
   .title-grid {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Smaller cards */
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 1rem;
   }
-
-  .title-card h3 {
-    font-size: 1rem;
-  }
-
-  .title-card p {
-    font-size: 0.8rem;
+  .title-card {
+    padding: 0.75rem;
   }
 }
 
 @media (max-width: 480px) {
-  .dashboard-content {
-    padding: 0.5rem;
+  .title-grid-container {
+    max-height: 400px;
   }
-
-  .section-title {
-    font-size: 1.2rem;
-  }
-
   .title-grid {
-    grid-template-columns: 1fr; /* Single column on small screens */
+    grid-template-columns: 1fr; /* Single column */
     gap: 0.75rem;
-  }
-
-  .title-card {
-    padding: 0.75rem;
   }
 }
