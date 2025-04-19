@@ -13,9 +13,8 @@ export default function TitleCard({ title }) {
   return (
     <div
       style={{
-        backgroundImage: `url(./img2.jpeg)`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
+        backgroundImage:`url('./img2.jpeg')`,
+        backgroundSize: 'contain',
         margin: "10px",
         background: '#ffffff',
         border: '1px solid #ddd',
