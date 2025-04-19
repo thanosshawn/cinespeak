@@ -26,7 +26,7 @@
 .title-grid-container {
   display: grid;
   gap: 1rem;
-  grid-template-columns: 1fr; /* mobile: 1 column */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   padding: 1rem;
    /* Limit height for scrolling */
   padding: 1rem;
