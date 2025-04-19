@@ -6,15 +6,27 @@
   flex-direction: column;
   height: 200px; /* Fixed height to maintain square aspect ratio */
   justify-content: space-between;
-  padding: 15px;
+  padding: 25px;
   text-align: left;
   width: 200px; /* Fixed width to maintain square aspect ratio */
+  margin: 10px; /* Add spacing between title cards */
 }
 
 .title-card h3 {
   font-size: 1.2em;
   margin-bottom: 10px;
 }
+
+.title-card h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0;
+    height: 2px;
+    background-color: #007bff; /* Highlight color */
+    transition: width 0.3s ease;
+  }
 
 .title-card p {
   color: #555;

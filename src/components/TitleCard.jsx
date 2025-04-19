@@ -12,7 +12,8 @@ export default function TitleCard({ title }) {
 
   return (
     <div
-      style={{
+      style={{height:"200px",width:"200px",
+        margin: "30px",
         background: '#ffffff',
         border: '1px solid #ddd',
         borderRadius: '12px',
@@ -20,7 +21,7 @@ export default function TitleCard({ title }) {
         boxShadow: '0 6px 20px rgba(0,0,0,0.06)',
         transition: 'transform 0.3s ease',
       }}
-      onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.03)')}
+      onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.15)')}
       onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
     >
       <h3 style={{ color: "#e91e63", marginBottom: "8px" }}>{title.name}</h3>

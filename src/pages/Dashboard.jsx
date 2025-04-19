@@ -33,6 +33,8 @@ export default function Dashboard() {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
 
+
+
   const handleLogout = async () => {
     await logout();
     navigate("/login");
