@@ -12,8 +12,11 @@ export default function TitleCard({ title }) {
 
   return (
     <div
-      style={{height:"200px",width:"200px",
-        margin: "30px",
+      style={{
+        backgroundImage: `url(./img2.jpeg)`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        margin: "10px",
         background: '#ffffff',
         border: '1px solid #ddd',
         borderRadius: '12px',
