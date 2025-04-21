@@ -1,43 +1,104 @@
 .title-card {
-  width: 100%;         /* fill grid cell */
-  height: auto;
-  box-sizing: border-box;
-  padding: 1rem;
-  background: #f2f2f2;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);}
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 15px auto;
+  border: 1px solid rgb(53, 55, 55);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #fff; /* fallback if image fails */
+  overflow: hidden;
+}
 
 .title-card h3 {
-  font-size: 1.2em;
+  font-size: 1.5em;
   margin-bottom: 10px;
+  position: relative;
+  color: #222;
+  transition: transform 0.3s ease;
 }
 
 .title-card h3::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -3px;
-    width: 0;
-    height: 2px;
-    background-color: #007bff; /* Highlight color */
-    transition: width 0.3s ease;
-  }
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 2px;
+  background-color: #007bff;
+  transition: width 0.3s ease;
+}
+
+.title-card h3:hover::after {
+  width: 100%;
+}
+
+/* Animate title with emoji on hover */
+.title-card:hover h3::before {
+  content: "✨ ";
+}
+
+.title-card:hover h3::after {
+  background-color: #ff69b4;
+}
 
 .title-card p {
   color: #555;
-  font-size: 0.9em;
+  font-size: 1em;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  margin: 0;
+  transition: color 0.3s ease;
 }
 
-/* Add spacing between title cards */
-.title-card {
-  margin: 10px; /* Adjust the margin as needed */
+.title-card:hover p::after {
+  content: " 💬";
 }
 
-/* Optional: Hover effect */
+/* Bounce-in hover animation */
 .title-card:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+  transform: translateY(-6px) scale(1.02);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .title-card {
+    padding: 16px;
+    max-width: 90%;
+  }
+
+  .title-card h3 {
+    font-size: 1.3em;
+  }
+
+  .title-card p {
+    font-size: 0.95em;
+  }
+}
+
+@media (max-width: 480px) {
+  .title-card {
+    padding: 14px;
+    max-width: 95%;
+  }
+
+  .title-card h3 {
+    font-size: 1.15em;
+  }
+
+  .title-card p {
+    font-size: 0.9em;
+  }
 }
