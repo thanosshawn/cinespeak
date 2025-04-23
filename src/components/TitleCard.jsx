@@ -18,7 +18,8 @@ export default function TitleCard({ title }) {
       onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
     >
        <img
-        src="/img2.jpeg" // make sure img2.jpeg is in the public folder
+       // src="/img2.jpeg"
+       src={title.poster} // make sure img2.jpeg is in the public folder
         alt={`${title.name} poster`}
         style={{
           width: "100%",
@@ -29,7 +30,7 @@ export default function TitleCard({ title }) {
         }}
       />
       <h3 style={{ color: "#e91e63", marginBottom: "8px" }}>{title.name}</h3>
-      <p style={{ margin: 0 }}>{title.genre} ({title.year})</p>
+      <p style={{ margin: 0 }}>{title.genre} ({title.year})  {title.director}</p>
       <button
         onClick={handleJoinChat}
         style={{
