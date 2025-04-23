@@ -1,70 +1,143 @@
-# Getting Started with Create React App
+# CineSpeak 🎬
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Vercel](https://vercelbadge.vercel.app/api/thanosshawn/cinespeak)](https://cinespeak.vercel.app)
 
-## Available Scripts
+CineSpeak is a dynamic web application that lets users explore, discuss, and analyze movies and web series. Powered by the [OMDb API](http://www.omdbapi.com/) for movie data and [Hugging Face](https://huggingface.co/) for AI-driven sentiment analysis and summarization, CineSpeak offers a seamless, real-time experience built with **React** and **Firebase**.
 
-In the project directory, you can run:
+## 🌟 Features
 
-### `npm start`
+- **Movie Exploration**: Search and browse movies using the OMDb API.
+- **User Messaging**: Engage in real-time discussions about movies.
+- **AI-Powered Analysis**: Analyze message sentiment and generate summaries using Hugging Face's BERT and BART models.
+- **Real-Time Updates**: Instant updates via Firebase Realtime Database.
+- **Responsive Design**: User-friendly interface across devices.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🚀 Live Demo
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Experience CineSpeak at: [cinespeak.vercel.app](https://cinespeak.vercel.app)
 
-### `npm test`
+## 🔧 Installation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Prerequisites
+- **Node.js** and **npm** installed
+- A **Firebase** project with Realtime Database enabled
+- A **Hugging Face** API key
+- An **OMDb API** key
 
-### `npm run build`
+### Steps
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/thanosshawn/cinespeak.git
+   cd cinespeak
+   ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. **Install Dependencies**
+   ```bash
+   npm install
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. **Configure Environment Variables**
+   Create a `.env` file in the root directory with the following:
+   ```
+   REACT_APP_FIREBASE_API_KEY=your_firebase_api_key
+   REACT_APP_FIREBASE_AUTH_DOMAIN=your_project.firebaseapp.com
+   REACT_APP_FIREBASE_DATABASE_URL=https://your_project.firebaseio.com
+   REACT_APP_FIREBASE_PROJECT_ID=your_project_id
+   REACT_APP_FIREBASE_STORAGE_BUCKET=your_project.appspot.com
+   REACT_APP_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
+   REACT_APP_FIREBASE_APP_ID=your_app_id
+   REACT_APP_HUGGINGFACE_API_KEY=your_huggingface_api_key
+   REACT_APP_OMDB_API_KEY=your_omdb_api_key
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+4. **Start the Development Server**
+   ```bash
+   npm start
+   ```
+   The app will run at `http://localhost:3000`.
 
-### `npm run eject`
+## 🧠 AI Integration
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+CineSpeak leverages Hugging Face's Inference API for AI-powered features:
+- **Sentiment Analysis**: Uses BERT to classify user messages as positive, negative, or neutral.
+- **Summarization**: Uses BART to generate concise summaries of long discussions.
+- **Workflow**:
+  1. Messages are stored in Firebase Realtime Database.
+  2. The frontend detects new messages and sends them to Hugging Face's API.
+  3. Analysis results are stored in Firebase and displayed in the UI.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+This approach avoids Firebase Cloud Functions for cost-effective deployment.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 📁 Project Structure
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+cinespeak/
+├── public/                  # Static assets
+├── src/
+│   ├── components/          # Reusable React components
+│   ├── firebase/            # Firebase configuration and utilities
+│   ├── utils/               # Helper functions (e.g., API calls)
+│   ├── App.js               # Main app component
+│   └── index.js             # Entry point
+├── .env                     # Environment variables
+├── package.json             # Project dependencies
+└── README.md                # Project documentation
+```
 
-## Learn More
+## 🚀 Deployment
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+To deploy CineSpeak on Vercel:
+1. Install the Vercel CLI:
+   ```bash
+   npm i -g vercel
+   ```
+2. Run `vercel` in the project root and follow the prompts.
+3. Add environment variables in Vercel’s dashboard (same as `.env`).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🧪 Testing
 
-### Code Splitting
+Run unit tests with:
+```bash
+npm test
+```
+Ensure all tests pass before submitting contributions.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 🔍 Troubleshooting
 
-### Analyzing the Bundle Size
+- **Firebase Error**: Verify your Firebase Realtime Database rules allow read/write:
+  ```json
+  {
+    "rules": {
+      ".read": true,
+      ".write": true
+    }
+  }
+  ```
+- **Hugging Face API Timeout**: Check your API key and internet connection. Consider caching results for frequent queries.
+- **OMDb API Issues**: Ensure your API key is valid and not rate-limited.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 🤝 Contributing
 
-### Making a Progressive Web App
+We welcome contributions! Follow these steps:
+1. Fork the repository.
+2. Create a feature branch (`git checkout -b feature/your-feature`).
+3. Commit changes (`git commit -m "Add your feature"`).
+4. Push to the branch (`git push origin feature/your-feature`).
+5. Open a pull request with a clear description.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Please adhere to:
+- Code style: Use Prettier and ESLint (run `npm run lint`).
+- Commit messages: Use clear, concise messages (e.g., `fix: resolve API timeout issue`).
 
-### Advanced Configuration
+## 📄 License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
 
-### Deployment
+## 📬 Contact
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+For questions or feedback, open an issue on [GitHub](https://github.com/thanosshawn/cinespeak) or reach out to [thanosshawn](https://github.com/thanosshawn).
 
-### `npm run build` fails to minify
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Built with ❤️ by the CineSpeak team.
